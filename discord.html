@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trusted Member Application | AEC | American Economic Group</title>
+<meta name="description" content="Apply for Trusted Member status in the American Economic Group Discord community.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<style>
+:root{--ink:#16202e;--mut:#536074;--line:#dde3ea;--bg:#fff;--tint:#f5f7fa;--blue:#29527b;--blue-d:#1e3f60;--red:#b3262d;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:700;line-height:1.2;margin:0;color:var(--ink)}
+a{color:var(--blue)}
+.wrap{max-width:980px;margin:0 auto;padding:0 28px}
+/* header */
+header{border-bottom:1px solid var(--line);background:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}
+.brand{display:block;height:50px}.brand svg{height:100%;width:auto;display:block}
+.logo-full text,.logo-full tspan{font-family:Consolas,"Courier New",monospace!important}
+nav{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-size:15px;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--line)}
+nav a.on{border-color:var(--blue)}
+nav a.soon{color:var(--mut)}
+nav a.soon small{font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-left:6px;color:var(--mut)}
+/* home */
+.hero{padding-top:84px;padding-bottom:72px}
+.hero h1{font-size:clamp(34px,5.2vw,52px);max-width:15em;letter-spacing:-.015em}
+.hero p{font-size:20px;color:var(--mut);max-width:34em;margin:22px 0 0}
+.hero .links{margin-top:32px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:13px 24px;border:0;border-radius:3px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--blue-d)}
+.btn[disabled]{opacity:.6;cursor:default}
+.textlink{font-weight:600;font-size:15px}
+.band{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section{padding:64px 0}
+h2{font-size:28px;margin-bottom:12px}
+.sub{color:var(--mut);max-width:38em;margin:0 0 36px}
+.agenda{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.agenda li{display:grid;grid-template-columns:230px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.agenda h3{font-size:19px}
+.agenda p{margin:0;color:var(--mut)}
+@media(max-width:700px){.agenda li{grid-template-columns:1fr;gap:6px}}
+.about{max-width:38em}
+.about p{margin:0 0 16px}
+/* inner pages */
+.pagehead{padding-top:56px;padding-bottom:8px}
+.pagehead h1{font-size:clamp(30px,4vw,40px);letter-spacing:-.01em}
+.pagehead p{color:var(--mut);margin:10px 0 0}
+.page{padding-top:28px;padding-bottom:80px}
+.prose{max-width:40em}
+.prose h2{font-size:21px;margin:36px 0 8px}
+.prose p,.prose li{margin:0 0 12px}
+.prose ul{padding-left:22px;margin:0 0 12px}
+.notice{border-left:3px solid var(--blue);background:var(--tint);padding:18px 22px;max-width:40em;margin:8px 0 32px}
+.notice b{font-family:Georgia,serif;font-size:18px;display:block;margin-bottom:4px}
+.notice span{color:var(--mut)}
+form{max-width:34em;display:grid;gap:18px}
+label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+input,select,textarea{width:100%;font:16px/1.4 inherit;font-family:inherit;color:var(--ink);background:#fff;border:1px solid #b9c3cf;border-radius:3px;padding:11px 12px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+textarea{min-height:150px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.msg{display:none;font-size:15px;padding:12px 14px;border-radius:3px}
+.msg.ok{background:#edf6ee;border:1px solid #b9d9bd;color:#1f5a27}
+.msg.err{background:#fbeeee;border:1px solid #e5bcbc;color:#8a1f1f}
+.msg.show{display:block}
+.fine{font-size:14px;color:var(--mut);margin:0}
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--tint);padding:44px 0 28px;font-size:14.5px;color:var(--mut)}
+footer .cols{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.fbrand{display:flex;align-items:center;gap:12px;color:var(--ink);font:700 17px Georgia,serif;margin-bottom:8px}
+.fbrand svg{height:40px;width:auto}
+footer p{margin:0;max-width:26em}
+footer .links a{display:block;color:var(--mut);text-decoration:none;padding:2px 0}
+footer .links a:hover{color:var(--blue);text-decoration:underline}
+.legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:13px}
+.view{display:none}.view.on{display:block}
+.steps{list-style:none;counter-reset:s;margin:0 0 36px;padding:0;max-width:40em;border-top:1px solid var(--line)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.steps li:before{content:counter(s);font:700 20px Georgia,serif;color:var(--blue)}
+.steps b{display:block;font-family:Georgia,serif;font-size:18px}
+.steps span{color:var(--mut)}
+fieldset{border:0;padding:0;margin:0}
+legend{font-size:14px;font-weight:600;margin-bottom:6px;padding:0}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px;margin:0 0 8px}
+.check input{width:auto;margin-top:5px;flex:none}
+.help{font-size:13.5px;color:var(--mut);margin:4px 0 0}
+</style></head><body>
+<header><div class="wrap">
+<a class="brand" href="index.html#home" aria-label="American Economic Group"><svg class="logo-full"
+  
+  
+   viewBox="0 0 1116.4378 181.69294"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-2.2181849,-270.65015)">
+    <g
+       id="g3"
+       transform="matrix(1.9980684,0,0,1.9980684,-810.68923,-413.51839)">
+      <path
+         style="fill:#336598;stroke-width:2.0815;stroke-linecap:round"
+         d="m 406.84664,428.53458 c 0,0 25.10055,-15.40795 44.53587,-82.81265 6.82947,-23.68567 52.96158,87.62734 52.96158,87.62734 l -41.53525,-71.45182 c 0,0 -39.53929,80.01146 -55.9622,66.63713 z"
+         id="path1" />
+      <ellipse
+         style="fill:#d40000;stroke-width:2.0815;stroke-linecap:round"
+         id="path2"
+         cx="535.69586"
+         cy="281.77798"
+         rx="8.6448975"
+         ry="7.5831347"
+         transform="rotate(13.267463)" />
+      <path
+         style="fill:#29527b;fill-opacity:1;stroke:none;stroke-width:1.99741;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 462.37667,361.32672 -9.31084,-13.57831 c 0,0 -9.842,26.0249 -15.36462,38.82722 -7.4238,17.20954 -19.37489,32.38027 -24.12051,37.32085 -1.46169,1.52173 -5.91544,4.63779 -5.91544,4.63779 0,0 3.46466,2.06752 7.77846,-0.55297 3.92328,-2.38327 9.34398,-7.70652 16.53834,-16.85975 14.73245,-20.40083 30.39461,-49.79483 30.39461,-49.79483 z"
+         id="path4" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:67.1106px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';text-align:center;letter-spacing:3.48795px;word-spacing:-8.44755px;text-anchor:middle;fill:#000000;stroke-width:15.8529;stroke-linecap:round"
+       x="666.80444"
+       y="346.06647"
+       id="text2"><tspan
+         id="tspan2"
+         x="668.5484"
+         y="346.06647"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:3.48795px;word-spacing:-8.44755px;fill:#000000;stroke-width:15.8529"
+         dy="0"
+         dx="0" textLength="860" lengthAdjust="spacing">American Economic Group</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:37.8626px;font-family:'MV Boli';-inkscape-font-specification:'MV Boli';text-align:center;letter-spacing:1.96782px;word-spacing:-4.76593px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:8.94389;stroke-linecap:round"
+       x="518.18384"
+       y="413.63184"
+       id="text2-1"><tspan
+         id="tspan2-9"
+         x="519.16772"
+         y="413.63184"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:1.96782px;word-spacing:-4.76593px;fill:#000000;fill-opacity:1;stroke-width:8.94389" textLength="600" lengthAdjust="spacing">Policy for a growing America</tspan></text>
+    <path
+       style="fill:#808080;stroke:#535353;stroke-width:2.39457;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 212.88038,369.42958 h 179.5094"
+       id="path3" />
+  </g>
+</svg></a>
+<nav aria-label="Main">
+<a href="index.html#home">Home</a>
+<a href="membership.html" class="on">Membership</a>
+<a href="index.html#feedback">Feedback</a>
+<a href="index.html#donate" class="soon">Donate<small>Coming soon</small></a>
+</nav></div></header>
+<main>
+<div class="wrap pagehead"><h1>Become a Trusted Member</h1><p>Join our Discord community, then complete this form to apply for Trusted Member status.</p></div>
+<div class="wrap page">
+<ol class="steps">
+<li><div><b>Join the Discord</b><span><a href="https://discord.gg/3Jr37bUEQu">Open the AEC Discord invite</a> and read the server rules.</span></div></li>
+<li><div><b>Submit this form</b><span>Use the same Discord username you joined with so we can find you.</span></div></li>
+<li><div><b>Review</b><span>We review applications and assign the Trusted Member role in Discord to approved applicants. Approval is not automatic.</span></div></li>
+</ol>
+
+<form data-form="membership" action="https://formspree.io/f/xdeebwog" method="POST">
+<input type="hidden" name="_subject" value="AEC: Trusted Member application">
+<div class="hp" aria-hidden="true"><label>Leave blank<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+<div class="row">
+<div><label for="m_name">Full name</label><input id="m_name" name="name" required autocomplete="name"></div>
+<div><label for="m_discord">Discord username</label><input id="m_discord" name="discord_username" required placeholder="username" autocomplete="off"></div>
+</div>
+<div><label for="m_email">Email</label><input id="m_email" name="email" type="email" required autocomplete="email"></div>
+<div class="row">
+<div><label for="m_loc">City / county</label><input id="m_loc" name="location" autocomplete="address-level2"></div>
+<div><label for="m_age">Are you 18 or older?</label><select id="m_age" name="age_18_plus" required><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+</div>
+<div><label for="m_role">Which best describes you?</label><select id="m_role" name="role" required><option value="">Select</option><option>Small business owner</option><option>Entrepreneur or aspiring founder</option><option>Student</option><option>Employee</option><option>Policy or economics professional</option><option>Interested citizen</option><option>Other</option></select></div>
+<div><label for="m_why">Why do you want to be a Trusted Member?</label><textarea id="m_why" name="why" required></textarea></div>
+<div><label for="m_interest">Which of our priorities matter most to you?</label>
+<select id="m_interest" name="top_priority"><option>Lower business taxes</option><option>Early entrepreneurship</option><option>Reducing regulations and barriers</option><option>Other</option></select></div>
+<fieldset><legend>Agreements</legend>
+<label class="check"><input type="checkbox" name="agree_rules" value="yes" required><span>I have read and will follow the Discord server rules.</span></label>
+<label class="check"><input type="checkbox" name="agree_respect" value="yes" required><span>I will engage respectfully, and I understand Trusted Member status can be removed for violating the rules.</span></label>
+<label class="check"><input type="checkbox" name="agree_privacy" value="yes" required><span>I agree to the <a href="index.html#privacy">Privacy Policy</a> and <a href="index.html#terms">Terms of Use</a>.</span></label>
+</fieldset>
+<button class="btn" type="submit">Submit application</button>
+<div class="msg ok" data-ok>Thank you. Your application has been received and we will review it.</div>
+<div class="msg err" data-err>Something went wrong. Please check the form and try again.</div>
+<p class="fine">Applying does not guarantee approval. We use your information only to review your application.</p>
+</form></div></main>
+<footer><div class="wrap">
+<div class="cols">
+<div><div class="fbrand"><svg
+  
+  
+   viewBox="0 0 843.68329 786.88981"
+   version="1.1"
+   id="f_svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="f_defs1" />
+  <g
+     id="f_layer1"
+     transform="translate(-2.2182734,-4.2152353)">
+    <g
+       id="f_g3"
+       transform="matrix(8.6533881,0,0,8.6533881,-3518.3836,-2958.8344)">
+      <path
+         style="fill:#336598;stroke-width:2.0815;stroke-linecap:round"
+         d="m 406.84664,428.53458 c 0,0 25.10055,-15.40795 44.53587,-82.81265 6.82947,-23.68567 52.96158,87.62734 52.96158,87.62734 l -41.53525,-71.45182 c 0,0 -39.53929,80.01146 -55.9622,66.63713 z"
+         id="f_path1" />
+      <ellipse
+         style="fill:#d40000;stroke-width:2.0815;stroke-linecap:round"
+         id="f_path2"
+         cx="535.69586"
+         cy="281.77798"
+         rx="8.6448975"
+         ry="7.5831347"
+         transform="rotate(13.267463)" />
+      <path
+         style="fill:#29527b;fill-opacity:1;stroke:none;stroke-width:1.99741;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+         d="m 462.37667,361.32672 -9.31084,-13.57831 c 0,0 -9.842,26.0249 -15.36462,38.82722 -7.4238,17.20954 -19.37489,32.38027 -24.12051,37.32085 -1.46169,1.52173 -5.91544,4.63779 -5.91544,4.63779 0,0 3.46466,2.06752 7.77846,-0.55297 3.92328,-2.38327 9.34398,-7.70652 16.53834,-16.85975 14.73245,-20.40083 30.39461,-49.79483 30.39461,-49.79483 z"
+         id="f_path4" />
+    </g>
+  </g>
+</svg><span>American Economic Group</span></div><p>A small, unofficial organization advocating for lower taxes and simpler rules for small businesses in Virginia.</p></div>
+<div class="links"><a href="index.html#home">Home</a><a href="membership.html">Membership</a><a href="index.html#feedback">Feedback</a><a href="index.html#donate">Donate</a><a href="index.html#privacy">Privacy Policy</a><a href="index.html#terms">Terms of Use</a></div>
+</div>
+<div class="legal">© 2026 American Economic Group. All rights reserved.</div>
+</div></footer>
+<script>
+document.querySelectorAll('form[data-form]').forEach(function(f){
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=f.querySelector('[data-ok]'),err=f.querySelector('[data-err]'),btn=f.querySelector('button');
+    ok.classList.remove('show');err.classList.remove('show');
+    if(f.querySelector('[name=age_18_plus]').value==='No'){err.textContent='Trusted Member status is limited to members 18 and older.';err.classList.add('show');return}
+    btn.disabled=true;
+    fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}})
+      .then(function(r){if(r.ok){ok.classList.add('show');f.reset()}else{err.textContent='Something went wrong. Please check the form and try again.';err.classList.add('show')}})
+      .catch(function(){err.textContent='Something went wrong. Please try again.';err.classList.add('show')})
+      .then(function(){btn.disabled=false});
+  });
+});
+</script>
+</body></html>
